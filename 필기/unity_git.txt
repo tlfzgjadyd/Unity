@@ -1,0 +1,19 @@
+< Unity 프로젝트 Git에 연동 >
+
+unity저장 장소를 홈밑에 두려니까 프로젝트 저장이 안됨
+여러가지 옮기다가 망가질거같아서 다음 방식으로 깃을 연결함
+
+1. ~/AppData/Local/Temp/밑에 Unity 폴더 생성
+Temp에 바로 통쨰로 깃하기엔 Temp밑에 폴더가 너무 많았음
+2. 생성된 프로젝트 폴더는 Temp밑에 1a~~~~~이런 이름으로 있을텐데
+프로젝트 다른이름으로 저장하기에서 이름 찾아서 그 폴더를 Unity폴더 밑으로 이동
+3. 폴더명을 프로젝트 명으로 변경
+4. 심볼릭 링크를 홈 밑에 생성함
+ln -s ~/AppData/Local/Temp/Unity  ~/Unity
+5. 홈밑의 Unity폴더에서 git init
+6. git remote add origin ssh주소
+7. git checkout -b dev로 이동한 후 에 push 준비
+8. 근데 push 시도하면 git pull 부터 해야 push할 수 있다고 뜰텐데 pull이 안될거임
+history기록이 두개가 달라서 그러므로 
+git pull origin dev --allow-unrelated-histories
+9. 이제 push하면됨
