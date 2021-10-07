@@ -10,8 +10,7 @@ public class KeyInputMoveEvent : MonoBehaviour
 
     void Update()
     {
-
-        float x = Input.GetAxisRaw("Horizontal"); //좌우 이동
+        float x = Input.GetAxisRaw("Horizontal"); //좌우 이동, 3D에서는 자동완성 이상하게 되려하는데 그걸 쓰라는 뜻이 아니라 vs가 잘못 안내해준거임
         //Negative left, a : -1
         //Positive right, d : 1
         //Non : 0
@@ -26,7 +25,7 @@ public class KeyInputMoveEvent : MonoBehaviour
         // 새로운 위치 = 현재 위치 + (방향 + 속도)
         //transform.position = transform.position + new Vector3(1, 0, 0)*1;
 
-        transform.position += Vecto3.right * 1 * Time.deltaTime+moveSpeed;
+        transform.position += Vector3.right * 1 * Time.deltaTime*moveSpeed;
     }
 }/*이 GetAxisRaw라는 함수는 유니티에 미리 설정된 단축키를 이용하는 함수이다
   이 단축키는 edit메뉴에 project settings에 Input Manager 열어서 확인 가능하대
