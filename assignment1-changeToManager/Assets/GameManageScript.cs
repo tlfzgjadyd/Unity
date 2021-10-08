@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//지금은 GO를 밖으로 놓고 GetComponent쓰는 방식으로 진행했음
+//근데 컴포넌트를 밖에 놓고 GO변수 얻어서 바로 사용하는 방식도 가능하다
 public class GameManageScript : MonoBehaviour
 {
     private GameManageScript gameMavageScript;
@@ -11,11 +13,11 @@ public class GameManageScript : MonoBehaviour
     public GameObject goFirstButton;
     public GameObject goSecondOutput;
     public GameObject goSecondButton;
-
-    public InputField uiFirstInput;
-    public Button uiFirstButton;
-    public Text uiSecondOutput;
-    public Button uiSecondButton;
+     
+    private InputField uiFirstInput;
+    private Button uiFirstButton;
+    private Text uiSecondOutput;
+    private Button uiSecondButton;
 
     void Awake()
     {
@@ -37,7 +39,7 @@ public class GameManageScript : MonoBehaviour
             uiSecondButton = goSecondButton.GetComponent<Button>();
 
 
-        uiFirstInput.gameObject.SetActive(true);
+        uiFirstInput.gameObject.SetActive(true);//이렇게 하는게 컴포넌트를 밖에 놓고 GO변수 얻어서 사용하는 방식이다 true인자까지 해주니까 에러 안나는걸 볼 수 있음
     }
     void Update()
     {
